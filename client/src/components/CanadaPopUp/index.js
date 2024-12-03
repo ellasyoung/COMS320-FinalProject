@@ -43,7 +43,7 @@ const CanadaPopUp = ({ goToNext, setOpenPopup, location }) => {
             Canada is a key supplier of critical minerals used in the production of iPhones, including aluminum, nickel, and gold. These resources are essential for components such as casings, batteries, and circuit boards. Canada's mining industry combines advanced technology with efforts to address environmental and labor challenges, contributing to global tech supply chains.
             </Blurb>
             <Row>
-            <a href="https://northamerica.arcelormittal.com/our-operations/arcelormittal-mines-and-infrastructure-canada" target="_blank">
+            <a href="https://northamerica.arcelormittal.com/our-operations/arcelormittal-mines-and-infrastructure-canada" target="_blank" rel="noreferrer">
                 <Img src={ThisImage} className="canada"></Img>
             </a>
             <Minerals>

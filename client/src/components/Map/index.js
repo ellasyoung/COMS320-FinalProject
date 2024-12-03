@@ -9,8 +9,35 @@ import ChinaPopUp from "../ChinaPopUp";
 import CanadaPopUp from "../CanadaPopUp";
 import ChilePopUp from "../ChilePopUp";
 import ColombiaPopUp from "../ColombiaPopUp";
+import AusPopUp from "../AustraliaPopUp";
+import USPopUp from "../USPopUp";
+import TaiwanPopUp from "../TaiwanPopUp";
+import ChinaManPopUp from "../ChinaManPopUp";
 
-const CustomMarker = L.divIcon({
+const WasteMarker = L.divIcon({
+    html: renderToStaticMarkup(
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          boxShadow: "4px 4px 5px rgba(0, 0, 0, 0.3)",
+          backgroundColor: "#800080", // Purple for waste
+          borderRadius: "50%",
+          padding: "8px",
+        }}
+      >
+        <FaMapMarkerAlt style={{ fontSize: "36px" }} />
+      </div>
+    ),
+    className: "custom-icon",
+    iconSize: [36, 36],
+    iconAnchor: [18, 36],
+  });
+  
+
+const MiningMarker = L.divIcon({
   html: renderToStaticMarkup(
     <div
       style={{
@@ -32,20 +59,50 @@ const CustomMarker = L.divIcon({
   iconAnchor: [18, 36],
 });
 
+const AssemblyMarker = L.divIcon({
+    html: renderToStaticMarkup(
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          boxShadow: "4px 4px 5px rgba(0, 0, 0, 0.3)",
+          backgroundColor: "#1E90FF", 
+          borderRadius: "50%",
+          padding: "8px",
+        }}
+      >
+        <FaMapMarkerAlt style={{ fontSize: "36px" }} />
+      </div>
+    ),
+    className: "custom-icon",
+    iconSize: [36, 36],
+    iconAnchor: [18, 36],
+  });
+
 const popups = {
     1: DRCPopUp, 
     2: ChinaPopUp, 
     3: CanadaPopUp,
     4: ChilePopUp,
     5: ColombiaPopUp,
+    6: AusPopUp,
+    7: USPopUp,
+    8: TaiwanPopUp,
+    9: ChinaManPopUp,
   };
 
 const locations = [
-  { id: 1, name: "Democratic Republic of the Congo", coords: [-8.7875, 26.4194] },
-  { id: 2, name: "China", coords: [41.7694, 109.9737] },
-  { id: 3, name: "Canada", coords: [50.2133, -66.3758] },
-  { id: 4, name: "Chile", coords: [-22.3090, -68.9188] },
-  { id: 5, name: "Colombia", coords: [6.7193, -75.9080] },
+  { id: 1, name: "The Democratic Republic of the Congo", coords: [-8.7875, 26.4194], type: "mining" },
+  { id: 2, name: "China", coords: [41.7694, 109.9737], type: "mining" },
+  { id: 3, name: "Canada", coords: [50.2133, -66.3758], type: "mining" },
+  { id: 4, name: "Chile", coords: [-22.3090, -68.9188], type: "mining" },
+  { id: 5, name: "Colombia", coords: [6.7193, -75.9080], type: "mining" },
+  { id: 6, name: "Australia", coords: [-33.5158, 116.0353], type: "mining" },
+  { id: 7, name: "United States", coords: [41.3456, -88.8426], type: "mining" },
+  { id: 8, name: "Taiwan", coords: [23.6978, 120.9605], type: "assembly" },
+  { id: 9, name: "China", coords: [34.7472, 113.6249], type: "assembly" },
 ];
 
 const MapController = ({ coords, zoom, freezeMap }) => {
@@ -107,7 +164,13 @@ const InteractiveMap = () => {
         <Marker
           key={location.id}
           position={location.coords}
-          icon={CustomMarker}
+          icon={
+            location.type === "mining" 
+              ? MiningMarker 
+              : location.type === "assembly" 
+              ? AssemblyMarker 
+              : WasteMarker
+            }
           eventHandlers={{
             click: () => setActiveLocation(location), 
           }}

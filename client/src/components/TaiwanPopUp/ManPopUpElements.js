@@ -14,30 +14,6 @@ export const Dim = styled.div`
   z-index: 1001;
 `;
 
-export const PhoneImage = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px; 
-  animation: slideToLeft 3s forwards;
-  z-index: 1002;
-
-  @keyframes slideToLeft {
-    from {
-      left: 50%; 
-      transform: translate(-50%, -50%);
-    }
-    to {
-      left: 5%; 
-      transform: translate(0, -50%);
-    }
-  }
-    @media screen and (max-width: 1500px) {
-        width: 200px;
-    }
-`;
-
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -63,9 +39,6 @@ export const Modal = styled.div`
   padding: 20px;
   opacity: 0;
   animation: ${fadeIn} 1s ease forwards;
-  @media screen and (max-width: 1300px) {
-        margin-left: 100px;
-    }
 `;
 
 export const ScrollCont = styled.div`
@@ -77,13 +50,13 @@ export const ScrollCont = styled.div`
   overflow-y: scroll; 
   overflow-x: hidden; 
   scrollbar-width: thin; 
-  scrollbar-color: #cd2222 #f1f1f1; 
+  scrollbar-color: #1E90FF #f1f1f1; 
   ::-webkit-scrollbar {
     width: 10px; 
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #cd2222;
+    background-color: #1E90FF;
     border-radius: 10px;
     border: 2px solid transparent;
   }
@@ -102,7 +75,7 @@ export const ScrollCont = styled.div`
 
 export const CloseButton = styled(FaTimes)`
   font-size: 24px; 
-  color: #cd2222;
+  color: #1E90FF;
   background-color: white; 
   border-radius: 50%;
   padding: 8px; 
@@ -114,14 +87,14 @@ export const CloseButton = styled(FaTimes)`
 
   &:hover {
     color: #fff;
-    background-color: #cd2222; 
+    background-color: #1E90FF; 
     transform: scale(1.1) rotate(360deg); 
   }
 `;
 
 export const NextButton = styled(FaArrowRight)`
   font-size: 24px; 
-  color: #cd2222;
+  color: #1E90FF;
   background-color: white; 
   border-radius: 50%;
   padding: 8px; 
@@ -133,14 +106,14 @@ export const NextButton = styled(FaArrowRight)`
 
   &:hover {
     color: #fff;
-    background-color: #cd2222; 
+    background-color: #1E90FF; 
     transform: scale(1.1) rotate(360deg); 
   }
 `;
 
 export const Title = styled.h1`
     font-size: 24px;
-    color: #cd2222;
+    color: #1E90FF;
     margin-top: 20px;
 `
 
@@ -162,20 +135,8 @@ export const Img = styled.img`
     transform: scale(1.1); 
   }
 
-  &.china{
-    height: 220px;
-  }
-
-  &.canada{
-    height: 250px;
-  }
-
-  &.chile{
-    height: 170px;
-  }
-
-  &.aus{
-    height: 230px;
+  &.tai{
+    height: 240px;
   }
 `;
 
@@ -194,7 +155,7 @@ export const Minerals = styled.div`
         li {
         margin-bottom: 15px;
             b {
-                color: #cd2222; 
+                color: #1E90FF; 
             }
         }
     }
@@ -206,7 +167,7 @@ export const Section = styled.div`
 
 export const DropdownTitle = styled.h2`
   font-size: 18px;
-  color: #cd2222;
+  color: #1E90FF;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -222,7 +183,7 @@ export const DropdownTitle = styled.h2`
 export const ExpandButton = styled.span`
   font-size: 24px;
   font-weight: bold;
-  color: #cd2222;
+  color: #1E90FF;
   transition: transform 0.3s ease;
 
   &:hover {
@@ -245,6 +206,6 @@ export const DropdownContent = styled.div`
   }
 
   b {
-    color: #cd2222;
+    color: #1E90FF;
   }
 `;

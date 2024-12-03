@@ -43,7 +43,7 @@ const ChilePopUp = ({ goToNext, setOpenPopup, location }) => {
         Chile is a leading global producer of copper and lithium, two critical minerals used in the production of iPhones. Copper is essential for wiring and circuitry, while lithium powers the rechargeable batteries that drive mobile devices. Chile’s mining industry underpins global technology supply chains but faces challenges of environmental sustainability and equitable resource governance.
         </Blurb>
         <Row>
-        <a href="https://www.mining-journal.com/data/news-analysis/4368940/copper-production-chile-climbs-august" target="_blank">
+        <a href="https://www.mining-journal.com/data/news-analysis/4368940/copper-production-chile-climbs-august" target="_blank" rel="noreferrer">
             <Img src={ThisImage} className="chile"></Img>
         </a>
         <Minerals>

@@ -43,7 +43,7 @@ const ColombiaPopUp = ({ goToNext, setOpenPopup, location }) => {
         Colombia is a key global supplier of gold and nickel, both critical for the production of iPhones. Gold is essential for coating circuit connectors to ensure conductivity, while nickel is used in batteries for energy storage. Colombia’s mining industry is deeply intertwined with global technology supply chains, but it faces challenges of illegal mining, labor exploitation, and environmental degradation.
         </Blurb>
         <Row>
-        <a href="https://globalvoices.org/2024/06/26/tensions-at-colombias-largest-gold-mine-highlight-climate-justice-quagmire/" target="_blank">
+        <a href="https://globalvoices.org/2024/06/26/tensions-at-colombias-largest-gold-mine-highlight-climate-justice-quagmire/" target="_blank" rel="noreferrer">
             <Img src={ThisImage}></Img>
         </a>
         <Minerals>

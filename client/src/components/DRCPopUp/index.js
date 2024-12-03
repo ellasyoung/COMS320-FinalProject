@@ -41,7 +41,7 @@ const DRCPopUp = ({ goToNext, setOpenPopup, location }) => {
           <ScrollCont>
           <Blurb>The Democratic Republic of Congo (DRC) is home to some of the most sought-after minerals in the world—coltan, tantalum, and cobalt—essential for modern electronics. However, this wealth of resources belies a deep history of exploitation, environmental devastation, and political conflict that underpins the global digital economy.</Blurb>
           <Row>
-            <a href="https://www.aljazeera.com/features/2024/5/2/blood-minerals-what-are-the-hidden-costs-of-the-eu-rwanda-supply-deal" target="_blank">
+            <a href="https://www.aljazeera.com/features/2024/5/2/blood-minerals-what-are-the-hidden-costs-of-the-eu-rwanda-supply-deal" target="_blank" rel="noreferrer">
                 <Img src={ThisImage}></Img>
             </a>
             <Minerals>
