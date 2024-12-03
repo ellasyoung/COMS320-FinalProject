@@ -1,8 +1,9 @@
+import HomeModal from "../components/HomeModal";
 
 function Home() {
   return (
-    <div>
-      <p>home</p>
+    <div style={{margin: "-10px"}}>
+      <HomeModal></HomeModal>
     </div>
   );
 }
