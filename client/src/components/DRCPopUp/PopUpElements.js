@@ -33,6 +33,9 @@ export const PhoneImage = styled.img`
       transform: translate(0, -50%);
     }
   }
+    @media screen and (max-width: 1500px) {
+        width: 200px;
+    }
 `;
 
 const fadeIn = keyframes`
@@ -60,6 +63,9 @@ export const Modal = styled.div`
   padding: 20px;
   opacity: 0;
   animation: ${fadeIn} 1s ease forwards;
+  @media screen and (max-width: 1300px) {
+        margin-left: 100px;
+    }
 `;
 
 export const ScrollCont = styled.div`
@@ -145,7 +151,7 @@ export const Blurb = styled.p`
 `;
 
 export const Img = styled.img`
-width: 150px;
+  width: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 10px; 
@@ -154,6 +160,10 @@ width: 150px;
 
   &:hover {
     transform: scale(1.1); 
+  }
+
+  &.china{
+    height: 220px;
   }
 `;
 

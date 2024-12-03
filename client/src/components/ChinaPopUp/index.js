@@ -39,82 +39,91 @@ const ChinaPopUp = ({ goToNext, setOpenPopup, location }) => {
           <Title>Mining in China</Title>
           
           <ScrollCont>
-          <Blurb>The Democratic Republic of Congo (DRC) is home to some of the most sought-after minerals in the world—coltan, tantalum, and cobalt—essential for modern electronics. However, this wealth of resources belies a deep history of exploitation, environmental devastation, and political conflict that underpins the global digital economy.</Blurb>
-          <Row>
-            <a href="https://www.mining.com/china-to-shut-down-2000-coal-mines-this-year-91471/" target="_blank">
-                <Img src={ThisImage}></Img>
+          <Blurb>
+            China is a global leader in mining and refining critical resources such as germanium, rare earth minerals, and aluminum. These materials are essential for the electronics industry and modern technology, yet their extraction reveals a legacy of environmental degradation, exploitative labor practices, and geopolitical power plays.
+            </Blurb>
+            <Row>
+            <a href="https://www.aljazeera.com/features/2024/5/2/china-rare-earths-mining" target="_blank">
+                <Img src={ThisImage} className="china"></Img>
             </a>
             <Minerals>
                 <ul>
-                    <li> <b>Coltan (Columbite-Tantalite):</b> Essential for tantalum capacitors, which enable energy storage in smartphones, laptops, and gaming consoles. The unique electrical properties of tantalum are critical to high-performance electronics.</li>
-                    <li> <b>Cobalt:</b> Central to rechargeable lithium-ion batteries, powering electric vehicles, mobile phones, and renewable energy storage solutions.</li>
+                <li>
+                    <b>Germanium:</b> Critical for fiber optics, infrared optics, and semiconductors, germanium is refined from zinc ores and used in the production of advanced telecommunications and imaging devices.
+                </li>
+                <li>
+                    <b>Rare Earth Minerals:</b> These include neodymium, dysprosium, and lanthanum, essential for magnets, batteries, and components in smartphones, electric vehicles, and wind turbines.
+                </li>
+                <li>
+                    <b>Aluminum:</b> A lightweight metal used extensively in cell phone frames, electronic circuits, and renewable energy systems, extracted from bauxite ore and processed in energy-intensive refineries.
+                </li>
                 </ul>
             </Minerals>
-          </Row>
-          <Section>
-                <DropdownTitle onClick={() => toggleSection("conflict")}>
-                Conflict Minerals and Armed Groups
+            </Row>
+            <Section>
+            <DropdownTitle onClick={() => toggleSection("conflict")}>
+                Geopolitics and Resource Dominance
                 <ExpandButton>{expanded.conflict ? "-" : "+"}</ExpandButton>
-                </DropdownTitle>
-                {expanded.conflict && (
+            </DropdownTitle>
+            {expanded.conflict && (
                 <DropdownContent>
-                    <p>
-                    The extraction of minerals like coltan, tantalum, and cobalt in the DRC fuels what are often referred to as “resource wars.” Armed militias, foreign-backed rebel groups, and even factions within the Congolese military compete for control of mining regions. Revenues from these operations are used to fund weapons, maintain power, and control local populations. For example:
-                    </p>
-                    <ul>
+                <p>
+                    China's near-monopoly on rare earth minerals has significant global implications. By controlling the majority of the supply, China leverages its resources for economic and geopolitical advantage:
+                </p>
+                <ul>
                     <li>
-                        <b>The Kivu Region:</b> Rich in coltan, this area has seen persistent violence as militias impose taxes or outright seize mining operations. The trade routes from these mines often pass through rebel-controlled territories, ensuring these groups reap profits at each stage of the supply chain.
+                    <b>Export Restrictions:</b> China has used export bans and quotas as a tool in trade disputes, creating shortages and driving up prices globally.
                     </li>
                     <li>
-                        <b>Gendered Violence:</b> Mass sexual violence has been used as a weapon of war to displace communities and seize mining areas. Women and girls are particularly targeted, with the trauma serving as a tool to destabilize families and communities, facilitating resource exploitation.
+                    <b>Environmental Impact:</b> Mining regions like Bayan Obo in Inner Mongolia are now environmentally devastated landscapes, with toxic waste and polluted water sources becoming permanent features.
                     </li>
-                    </ul>
+                </ul>
                 </DropdownContent>
-                )}
+            )}
             </Section>
 
             <Section>
-                <DropdownTitle onClick={() => toggleSection("labor")}>
+            <DropdownTitle onClick={() => toggleSection("labor")}>
                 Exploitation of Labor
                 <ExpandButton>{expanded.labor ? "-" : "+"}</ExpandButton>
-                </DropdownTitle>
-                {expanded.labor && (
+            </DropdownTitle>
+            {expanded.labor && (
                 <DropdownContent>
-                    <ul>
+                <ul>
                     <li>
-                        <b>Child Labor:</b> Children as young as seven work in hazardous conditions, often in artisanal mines where safety regulations are nonexistent. They manually dig, wash, and sort minerals, risking landslides and exposure to toxic dust.
+                    <b>Health Risks:</b> Workers in rare earth and aluminum mining are exposed to toxic chemicals and radiation, leading to severe health issues like respiratory diseases and cancer.
                     </li>
                     <li>
-                        <b>Lack of Fair Compensation:</b> Miners often sell their labor and resources to intermediaries at exploitative rates. A kilo of coltan might sell for $10 locally, but it fetches thousands on the global market. The laborers themselves rarely see the economic benefits of this high demand.
+                    <b>Low Wages:</b> Despite the high global demand for these materials, miners often receive minimal pay, unable to share in the profits generated by their labor.
                     </li>
                     <li>
-                        <b>Debt Bondage:</b> Many workers rely on informal lenders to finance basic tools and supplies. This debt traps them in cycles of dependency, forcing them to continue working under exploitative conditions.
+                    <b>Lack of Protections:</b> Many mines lack proper safety protocols, putting workers at risk of accidents, collapses, and exposure to hazardous materials.
                     </li>
-                    </ul>
+                </ul>
                 </DropdownContent>
-                )}
+            )}
             </Section>
 
             <Section>
-                <DropdownTitle onClick={() => toggleSection("governance")}>
-                Resource Governance and Corruption
+            <DropdownTitle onClick={() => toggleSection("governance")}>
+                Resource Governance and Environmental Concerns
                 <ExpandButton>{expanded.governance ? "-" : "+"}</ExpandButton>
-                </DropdownTitle>
-                {expanded.governance && (
+            </DropdownTitle>
+            {expanded.governance && (
                 <DropdownContent>
-                    <ul>
+                <ul>
                     <li>
-                        <b>Illegal Mining Operations:</b> Many mines operate without oversight or regulation, often under the control of local elites or militias who exploit both resources and workers. These operations bypass state revenue systems, depriving the nation of potential funds for development.
+                    <b>Environmental Degradation:</b> Rare earth and aluminum mining have left regions like Inner Mongolia with barren landscapes, contaminated waterways, and long-lasting ecological damage.
                     </li>
                     <li>
-                        <b>Government Complicity:</b> Reports have highlighted instances where government officials accept bribes to turn a blind eye to illegal activities or directly collaborate with armed groups controlling mining operations. This further erodes public trust and leaves communities vulnerable.
+                    <b>Government Oversight:</b> While China's government promotes green technology, its mining practices often prioritize economic growth over environmental sustainability, leading to contradictions in policy enforcement.
                     </li>
                     <li>
-                        <b>Global Corporate Profiteering:</b> Multinational corporations often purchase minerals from intermediaries without questioning their origins, prioritizing cost-efficiency over ethical sourcing. This complicity perpetuates the violence and inequities in the mining regions.
+                    <b>Global Corporate Dependency:</b> Multinational corporations rely on Chinese-sourced materials due to their cost-efficiency, reinforcing China's central role in the global tech supply chain and limiting alternative sourcing initiatives.
                     </li>
-                    </ul>
+                </ul>
                 </DropdownContent>
-                )}
+            )}
             </Section>
             </ScrollCont>
         </Modal>
