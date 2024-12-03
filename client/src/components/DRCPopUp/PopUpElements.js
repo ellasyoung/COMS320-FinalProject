@@ -169,6 +169,10 @@ export const Img = styled.img`
   &.canada{
     height: 250px;
   }
+
+  &.chile{
+    height: 170px;
+  }
 `;
 
 export const Row = styled.div`

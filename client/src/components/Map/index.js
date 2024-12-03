@@ -7,6 +7,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import DRCPopUp from "../DRCPopUp";
 import ChinaPopUp from "../ChinaPopUp";
 import CanadaPopUp from "../CanadaPopUp";
+import ChilePopUp from "../ChilePopUp";
+import ColombiaPopUp from "../ColombiaPopUp";
 
 const CustomMarker = L.divIcon({
   html: renderToStaticMarkup(
@@ -34,12 +36,16 @@ const popups = {
     1: DRCPopUp, 
     2: ChinaPopUp, 
     3: CanadaPopUp,
+    4: ChilePopUp,
+    5: ColombiaPopUp,
   };
 
 const locations = [
   { id: 1, name: "Democratic Republic of the Congo", coords: [-8.7875, 26.4194] },
   { id: 2, name: "China", coords: [41.7694, 109.9737] },
   { id: 3, name: "Canada", coords: [50.2133, -66.3758] },
+  { id: 4, name: "Chile", coords: [-22.3090, -68.9188] },
+  { id: 5, name: "Colombia", coords: [6.7193, -75.9080] },
 ];
 
 const MapController = ({ coords, zoom, freezeMap }) => {
