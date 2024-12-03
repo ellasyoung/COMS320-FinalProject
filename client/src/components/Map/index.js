@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { renderToStaticMarkup } from "react-dom/server";
 import DRCPopUp from "../DRCPopUp";
+import ChinaPopUp from "../ChinaPopUp";
 
 const CustomMarker = L.divIcon({
   html: renderToStaticMarkup(
@@ -28,24 +29,46 @@ const CustomMarker = L.divIcon({
   iconAnchor: [18, 36],
 });
 
+const popups = {
+    1: DRCPopUp, 
+    2: ChinaPopUp, 
+  };
+
 const locations = [
   { id: 1, name: "Democratic Republic of the Congo", coords: [-8.7875, 26.4194] },
-  { id: 2, name: "Paris", coords: [48.8566, 2.3522] },
-  { id: 3, name: "Tokyo", coords: [35.6895, 139.6917] },
+  { id: 2, name: "China", coords: [41.7694, 109.9737] },
 ];
 
-// Component to programmatically control the map
-const MapController = ({ coords, zoom }) => {
-  const map = useMap();
-
-  useEffect(() => {
-    if (coords) {
-      map.flyTo(coords, zoom, { duration: 1.5 }); // Smoothly zoom to the new location
-    }
-  }, [coords, zoom, map]);
-
-  return null;
-};
+const MapController = ({ coords, zoom, freezeMap }) => {
+    const map = useMap();
+  
+    useEffect(() => {
+      if (coords) {
+        map.flyTo(coords, zoom, { duration: 1.5 });
+      }
+    }, [coords, zoom, map]);
+  
+    useEffect(() => {
+      if (freezeMap) {
+        map.dragging.disable();
+        map.scrollWheelZoom.disable();
+        map.doubleClickZoom.disable();
+        map.touchZoom.disable();
+        map.boxZoom.disable();
+        map.keyboard.disable();
+      } else {
+        map.dragging.enable();
+        map.scrollWheelZoom.enable();
+        map.doubleClickZoom.enable();
+        map.touchZoom.enable();
+        map.boxZoom.enable();
+        map.keyboard.enable();
+      }
+    }, [freezeMap, map]);
+  
+    return null;
+  };
+  
 
 const InteractiveMap = () => {
   const [activeLocation, setActiveLocation] = useState(locations[0]); 
@@ -60,6 +83,8 @@ const InteractiveMap = () => {
     setActiveLocation(null); 
   };
 
+  const ActivePopup = activeLocation ? popups[activeLocation.id] : null;
+
   return (
     <MapContainer center={locations[0].coords} zoom={6} style={{ height: "100vh", width: "100%" }}>
       <TileLayer
@@ -67,7 +92,7 @@ const InteractiveMap = () => {
         attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
       />
 
-      <MapController coords={activeLocation?.coords} zoom={8} />
+      <MapController coords={activeLocation?.coords} zoom={8} freezeMap={!!activeLocation} />
 
       {locations.map((location) => (
         <Marker
@@ -80,8 +105,8 @@ const InteractiveMap = () => {
         />
       ))}
 
-      {activeLocation && (
-        <DRCPopUp
+    {ActivePopup && (
+        <ActivePopup
           goToNext={goToNext}
           setOpenPopup={closePopup}
           location={activeLocation}

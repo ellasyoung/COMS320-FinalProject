@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Dim, PhoneImage, Modal, CloseButton, NextButton, Title, Blurb, Img, Row, Minerals, Section, DropdownTitle, DropdownContent, ExpandButton, ScrollCont } from "./PopUpElements";
-import Phone from "../../assets/phonecases/drc-phonecase.png";
-import ThisImage from "../../assets/drc-img.png";
+import { Dim, PhoneImage, Modal, CloseButton, NextButton, Title, Blurb, Img, Row, Minerals, Section, DropdownTitle, DropdownContent, ExpandButton, ScrollCont } from "../DRCPopUp/PopUpElements";
+import Phone from "../../assets/phonecases/china-phonecase.png";
+import ThisImage from "../../assets/china-img.jpg";
 
-const DRCPopUp = ({ goToNext, setOpenPopup, location }) => {
+const ChinaPopUp = ({ goToNext, setOpenPopup, location }) => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -36,12 +36,12 @@ const DRCPopUp = ({ goToNext, setOpenPopup, location }) => {
               goToNext();
             }}
           />
-          <Title>Mining in The Democratic Republic of the Congo</Title>
+          <Title>Mining in China</Title>
           
           <ScrollCont>
           <Blurb>The Democratic Republic of Congo (DRC) is home to some of the most sought-after minerals in the world—coltan, tantalum, and cobalt—essential for modern electronics. However, this wealth of resources belies a deep history of exploitation, environmental devastation, and political conflict that underpins the global digital economy.</Blurb>
           <Row>
-            <a href="https://www.aljazeera.com/features/2024/5/2/blood-minerals-what-are-the-hidden-costs-of-the-eu-rwanda-supply-deal" target="_blank">
+            <a href="https://www.mining.com/china-to-shut-down-2000-coal-mines-this-year-91471/" target="_blank">
                 <Img src={ThisImage}></Img>
             </a>
             <Minerals>
@@ -123,5 +123,5 @@ const DRCPopUp = ({ goToNext, setOpenPopup, location }) => {
   );
 };
 
-export default DRCPopUp;
+export default ChinaPopUp;
 
