@@ -13,6 +13,8 @@ import AusPopUp from "../AustraliaPopUp";
 import USPopUp from "../USPopUp";
 import TaiwanPopUp from "../TaiwanPopUp";
 import ChinaManPopUp from "../ChinaManPopUp";
+import GhanaPopUp from "../GhanaPopUp";
+import PakPopUp from "../PakPopUp";
 
 const WasteMarker = L.divIcon({
     html: renderToStaticMarkup(
@@ -23,7 +25,7 @@ const WasteMarker = L.divIcon({
           alignItems: "center",
           color: "white",
           boxShadow: "4px 4px 5px rgba(0, 0, 0, 0.3)",
-          backgroundColor: "#800080", // Purple for waste
+          backgroundColor: "#800080", 
           borderRadius: "50%",
           padding: "8px",
         }}
@@ -91,6 +93,8 @@ const popups = {
     7: USPopUp,
     8: TaiwanPopUp,
     9: ChinaManPopUp,
+    10: GhanaPopUp,
+    11: PakPopUp
   };
 
 const locations = [
@@ -103,6 +107,8 @@ const locations = [
   { id: 7, name: "United States", coords: [41.3456, -88.8426], type: "mining" },
   { id: 8, name: "Taiwan", coords: [23.6978, 120.9605], type: "assembly" },
   { id: 9, name: "China", coords: [34.7472, 113.6249], type: "assembly" },
+  { id: 10, name: "Ghana", coords: [5.5457, 0.2241], type: "waste" },
+  { id: 11, name: "Pakistan", coords: [31.5204, 74.3587], type: "waste" },
 ];
 
 const MapController = ({ coords, zoom, freezeMap }) => {
