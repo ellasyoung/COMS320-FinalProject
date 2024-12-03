@@ -165,6 +165,10 @@ export const Img = styled.img`
   &.china{
     height: 220px;
   }
+
+  &.canada{
+    height: 250px;
+  }
 `;
 
 export const Row = styled.div`

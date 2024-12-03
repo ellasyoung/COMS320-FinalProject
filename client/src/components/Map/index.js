@@ -6,6 +6,7 @@ import L from "leaflet";
 import { renderToStaticMarkup } from "react-dom/server";
 import DRCPopUp from "../DRCPopUp";
 import ChinaPopUp from "../ChinaPopUp";
+import CanadaPopUp from "../CanadaPopUp";
 
 const CustomMarker = L.divIcon({
   html: renderToStaticMarkup(
@@ -32,11 +33,13 @@ const CustomMarker = L.divIcon({
 const popups = {
     1: DRCPopUp, 
     2: ChinaPopUp, 
+    3: CanadaPopUp,
   };
 
 const locations = [
   { id: 1, name: "Democratic Republic of the Congo", coords: [-8.7875, 26.4194] },
   { id: 2, name: "China", coords: [41.7694, 109.9737] },
+  { id: 3, name: "Canada", coords: [50.2133, -66.3758] },
 ];
 
 const MapController = ({ coords, zoom, freezeMap }) => {

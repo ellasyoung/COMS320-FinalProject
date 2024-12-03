@@ -43,7 +43,7 @@ const ChinaPopUp = ({ goToNext, setOpenPopup, location }) => {
             China is a global leader in mining and refining critical resources such as germanium, rare earth minerals, and aluminum. These materials are essential for the electronics industry and modern technology, yet their extraction reveals a legacy of environmental degradation, exploitative labor practices, and geopolitical power plays.
             </Blurb>
             <Row>
-            <a href="https://www.aljazeera.com/features/2024/5/2/china-rare-earths-mining" target="_blank">
+            <a href="https://www.mining.com/china-to-shut-down-2000-coal-mines-this-year-91471/" target="_blank">
                 <Img src={ThisImage} className="china"></Img>
             </a>
             <Minerals>
