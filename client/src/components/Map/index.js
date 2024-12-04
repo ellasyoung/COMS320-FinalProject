@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Polyline, useMap } from "react-leaflet";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -15,6 +15,7 @@ import TaiwanPopUp from "../TaiwanPopUp";
 import ChinaManPopUp from "../ChinaManPopUp";
 import GhanaPopUp from "../GhanaPopUp";
 import PakPopUp from "../PakPopUp";
+
 
 const WasteMarker = L.divIcon({
     html: renderToStaticMarkup(
@@ -140,6 +141,17 @@ const MapController = ({ coords, zoom, freezeMap }) => {
   
     return null;
   };
+
+  const connections = locations
+  .filter((loc) => loc.type === "mining")
+  .flatMap((miningLoc) =>
+    locations
+      .filter((loc) => loc.type === "assembly")
+      .map((assemblyLoc) => ({
+        from: miningLoc.coords,
+        to: assemblyLoc.coords,
+      }))
+  );
   
 
 const InteractiveMap = () => {
@@ -165,6 +177,14 @@ const InteractiveMap = () => {
       />
 
       <MapController coords={activeLocation?.coords} zoom={8} freezeMap={!!activeLocation} />
+
+      {connections.map((connection, index) => (
+        <Polyline
+          key={index}
+          positions={[connection.from, connection.to]}
+          pathOptions={{ color: "blue", weight: 2, opacity: "0.2" }}
+        />
+      ))}
 
       {locations.map((location) => (
         <Marker

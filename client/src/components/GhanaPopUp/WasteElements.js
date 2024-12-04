@@ -213,3 +213,27 @@ export const DropdownContent = styled.div`
     color: #800080;
   }
 `;
+
+export const PhoneImage = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px; 
+  animation: slideToLeft 3s forwards;
+  z-index: 1002;
+
+  @keyframes slideToLeft {
+    from {
+      left: 50%; 
+      transform: translate(-50%, -50%);
+    }
+    to {
+      left: 5%; 
+      transform: translate(0, -50%);
+    }
+  }
+    @media screen and (max-width: 1500px) {
+        width: 200px;
+    }
+`;

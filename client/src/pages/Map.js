@@ -27,6 +27,20 @@ const HomeButton = styled(FaHome)`
   }
 `;
 
+const Name = styled.p`
+    color: white;
+    font-size: 12px;
+    background-color: black;
+    position: fixed; 
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 1000;
+    padding: 5px;
+    border-radius: 3px;
+`;
+
 function MapPage() {
   const navigate = useNavigate();
 
@@ -34,6 +48,7 @@ function MapPage() {
     <div style={{ position: "relative", margin: "-10px" }}>
       <HomeButton onClick={() => navigate("/")} />
       <Map/>
+      <Name>[ella young]</Name>
     </div>
   );
 }

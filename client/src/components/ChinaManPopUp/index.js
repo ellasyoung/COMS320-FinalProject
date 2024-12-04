@@ -1,8 +1,16 @@
-import React, { useState } from "react";
-import { Dim, Modal, CloseButton, NextButton, Title, Blurb, Img, Row, Minerals, Section, DropdownTitle, DropdownContent, ExpandButton, ScrollCont } from "../TaiwanPopUp/ManPopUpElements";
+import React, { useState, useEffect } from "react";
+import { Dim, Modal, CloseButton, NextButton, Title, Blurb, Img, Row, Minerals, Section, DropdownTitle, DropdownContent, ExpandButton, ScrollCont, PhoneImage } from "../TaiwanPopUp/ManPopUpElements";
 import ThisImage from "../../assets/fox-img.jpg";
+import Phone from "../../assets/phonecases/china-assemby-phonecase.png";
 
 const ChinaManPopUp = ({ goToNext, setOpenPopup, location }) => {
+
+    const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+      const timer = setTimeout(() => setShowModal(true), 1000);
+      return () => clearTimeout(timer);
+    }, []);
 
   const [expanded, setExpanded] = useState({
     conflict: false,
@@ -19,7 +27,8 @@ const ChinaManPopUp = ({ goToNext, setOpenPopup, location }) => {
 
   return (
     <Dim>
-        <Modal>
+        <PhoneImage src={Phone} alt={`Phone case for ${location.name}`} />
+        { showModal && (<Modal>
           <CloseButton onClick={() => setOpenPopup(false)} />
           <NextButton
             onClick={() => {
@@ -145,7 +154,7 @@ const ChinaManPopUp = ({ goToNext, setOpenPopup, location }) => {
         )}
         </Section>
         </ScrollCont>
-        </Modal>
+        </Modal>)}
     </Dim>
   );
 };
